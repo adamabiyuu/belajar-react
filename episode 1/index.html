@@ -20,6 +20,12 @@
 
         function HomePage(){
             const students = [ 'adam', 'wili', 'amil']
+            const [likes, setLikes] = React.useState(0);
+
+            function HandleClick(){
+                setLikes(likes + 1)
+            }
+            
             return (
                 <>
                     <Header name='abiyu' />
@@ -30,6 +36,10 @@
                             ))
                         }    
                     </ul>
+
+                    <button onClick={HandleClick}>Like ({likes})</button>
+
+
                 </>
             )
         }
